@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Person } from "@/content/people";
+import { sitePath } from "@/lib/site";
 import { DegreeBadges } from "./DegreeBadges";
 
 function initials(name: string) {
@@ -10,7 +11,7 @@ export function PersonProfile({ person, compact = false }: { person: Person; com
   return (
     <article className={`person-card${compact ? " person-card-compact" : ""}`} id={person.slug}>
       {person.photo ? (
-        <Image className="portrait-photo" src={person.photo} alt={`Portrait of ${person.name}`} width={720} height={720} />
+        <Image className="portrait-photo" src={sitePath(person.photo)} alt={`Portrait of ${person.name}`} width={720} height={720} />
       ) : (
         <div className="portrait-placeholder" aria-hidden="true">{initials(person.name)}</div>
       )}
@@ -29,8 +30,10 @@ export function PersonProfile({ person, compact = false }: { person: Person; com
         ) : null}
         {person.links?.length ? (
           <div className="person-links">
-            {person.links.map((link) => (
-              <a href={link.href} key={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined}>{link.label}</a>
+            {person.links.map((link) => link.href.startsWith("/") ? (
+              <a href={sitePath(link.href)} key={link.href}>{link.label}</a>
+            ) : (
+              <a href={link.href} key={link.href} target="_blank" rel="noreferrer">{link.label}</a>
             ))}
           </div>
         ) : null}

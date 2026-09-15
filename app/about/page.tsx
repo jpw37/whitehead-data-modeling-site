@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { sitePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About | Data-Driven Modeling Group",
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
   openGraph: { images: [] },
   twitter: { images: [] },
 };
+
+export const dynamic = "force-static";
 
 const acmeLinks = [
   { label: "Explore the ACME program", href: "https://acme.byu.edu/" },
@@ -48,13 +51,13 @@ export default function AboutPage() {
         </div>
         <div className="outdoors-gallery">
           <figure className="outdoors-wide">
-            <Image src="/images/mountain-panorama.jpg" alt="A trail crossing a broad alpine basin beneath red mountain ridges" width={2600} height={866} sizes="(max-width: 760px) 100vw, 70vw" />
+            <Image src={sitePath("/images/mountain-panorama.jpg")} alt="A trail crossing a broad alpine basin beneath red mountain ridges" width={2600} height={866} sizes="(max-width: 760px) 100vw, 70vw" />
           </figure>
           <figure>
-            <Image src="/images/backpacking-overlook.jpg" alt="Four backpackers looking across an alpine valley" width={1800} height={1350} sizes="(max-width: 760px) 100vw, 35vw" />
+            <Image src={sitePath("/images/backpacking-overlook.jpg")} alt="Four backpackers looking across an alpine valley" width={1800} height={1350} sizes="(max-width: 760px) 100vw, 35vw" />
           </figure>
           <figure>
-            <Image src="/images/trail-running.jpg" alt="A runner moving along a shaded woodland trail" width={1800} height={1350} sizes="(max-width: 760px) 100vw, 35vw" />
+            <Image src={sitePath("/images/trail-running.jpg")} alt="A runner moving along a shaded woodland trail" width={1800} height={1350} sizes="(max-width: 760px) 100vw, 35vw" />
           </figure>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { individualCollaborators, partnerInstitutions } from "@/content/collaborators";
 import { activePeople } from "@/content/people";
+import { sitePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "People | Data-Driven Modeling Group",
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   openGraph: { images: [] },
   twitter: { images: [] },
 };
+
+export const dynamic = "force-static";
 
 export default function PeoplePage() {
   const profiles = activePeople.filter((person) => person.verified);
@@ -80,7 +83,7 @@ export default function PeoplePage() {
             ))}
           </div>
         </div>
-        <a className="button button-primary" href="/alumni">View group alumni</a>
+        <a className="button button-primary" href={sitePath("/alumni/")}>View group alumni</a>
       </section>
       <SiteFooter />
     </main>

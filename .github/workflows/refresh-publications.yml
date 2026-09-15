@@ -16,6 +16,8 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      changed: ${{ steps.publication-change.outputs.changed }}
     steps:
       - name: Check out the website
         uses: actions/checkout@v6
@@ -59,3 +61,12 @@ jobs:
           git add content/publications.generated.json
           git commit -m "Update recent publications"
           git push
+
+  publish:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { sitePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Previous Work | Data-Driven Modeling Group",
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
   openGraph: { images: [] },
   twitter: { images: [] },
 };
+
+export const dynamic = "force-static";
 
 const publications = [
   {
@@ -45,7 +48,7 @@ export default function PreviousWorkPage() {
           <p>The GeoClaw software package was used extensively to simulate tsunami generation and propagation, allowing modeled wave heights and arrival times to be compared with the historical record.</p>
           <div className="fulbright-support">
             <a href="https://fulbrightscholars.org/what-fulbright/fulbright-scholar-program" target="_blank" rel="noreferrer" aria-label="Learn about the Fulbright Scholar Program">
-              <Image className="fulbright-logo" src="/images/funders/fulbright-scholar-program.svg" alt="Fulbright Scholar Program" width={1200} height={300} sizes="(max-width: 640px) 80vw, 300px" unoptimized />
+              <Image className="fulbright-logo" src={sitePath("/images/funders/fulbright-scholar-program.svg")} alt="Fulbright Scholar Program" width={1200} height={300} sizes="(max-width: 640px) 80vw, 300px" unoptimized />
             </a>
             <p>Jared Whitehead was supported by a Fulbright Faculty Award to visit Bandung Institute of Technology in the winter of 2025, strengthening research collaboration in Indonesia.</p>
           </div>

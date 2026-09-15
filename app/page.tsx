@@ -3,6 +3,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { featuredPeople } from "@/content/people";
 import { researchPrograms } from "@/content/research";
+import { sitePath } from "@/lib/site";
+
+export const dynamic = "force-static";
 
 export default function Home() {
   return (
@@ -24,8 +27,8 @@ export default function Home() {
             to discovering interpretable physical mechanisms.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="/research">Explore our research</a>
-            <a className="button button-secondary" href="/people">Meet the group</a>
+            <a className="button button-primary" href={sitePath("/research/")}>Explore our research</a>
+            <a className="button button-secondary" href={sitePath("/people/")}>Meet the group</a>
           </div>
         </div>
 
@@ -47,7 +50,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="landscape-band" role="img" aria-label="A mountain trail crossing a broad alpine basin">
+      <section
+        className="landscape-band"
+        role="img"
+        aria-label="A mountain trail crossing a broad alpine basin"
+        style={{ "--mountain-panorama-image": `url("${sitePath("/images/mountain-panorama.jpg")}")` } as React.CSSProperties}
+      >
         <div className="landscape-caption">
           <span>Complex terrain. Useful structure.</span>
           <p>Our work looks for the paths that connect observations to understanding.</p>
@@ -68,7 +76,7 @@ export default function Home() {
               <p className="program-eyebrow">{program.eyebrow}</p>
               <h3>{program.title}</h3>
               <p>{program.summary}</p>
-              <a href={`/research#${program.slug}`}>Explore {program.shortTitle.toLowerCase()}<span aria-hidden="true"> ↗</span></a>
+              <a href={sitePath(`/research/#${program.slug}`)}>Explore {program.shortTitle.toLowerCase()}<span aria-hidden="true"> ↗</span></a>
             </article>
           ))}
         </div>
@@ -91,8 +99,8 @@ export default function Home() {
             <h3>One record per person.</h3>
             <p>Each profile can include a degree level, short bio, research programs, personal links, and an optional portrait. Alumni remain part of the group history.</p>
             <div className="stacked-links">
-              <a href="/people">Current members <span aria-hidden="true">→</span></a>
-              <a href="/alumni">Group alumni <span aria-hidden="true">→</span></a>
+              <a href={sitePath("/people/")}>Current members <span aria-hidden="true">→</span></a>
+              <a href={sitePath("/alumni/")}>Group alumni <span aria-hidden="true">→</span></a>
             </div>
           </aside>
         </div>
@@ -104,7 +112,7 @@ export default function Home() {
           <h2>Applied mathematics as a complete educational experience.</h2>
           <p>Jared has played a substantial role in developing the curriculum for BYU’s Applied and Computational Mathematics Emphasis (ACME).</p>
         </div>
-        <a className="button button-secondary" href="/about#acme">ACME and curriculum</a>
+        <a className="button button-secondary" href={sitePath("/about/#acme")}>ACME and curriculum</a>
       </section>
 
       <section className="previous-section" id="previous-work">
@@ -113,7 +121,7 @@ export default function Home() {
           <h2>Historical earthquake and tsunami inference</h2>
           <p>Research using historical Indonesian tsunami accounts, Bayesian inference, MCMC, and GeoClaw simulations to reconstruct source earthquakes and improve modern seismic-risk assessment.</p>
         </div>
-        <a href="/previous-work">Explore the previous work <span aria-hidden="true">→</span></a>
+        <a href={sitePath("/previous-work/")}>Explore the previous work <span aria-hidden="true">→</span></a>
       </section>
 
       <SiteFooter />

@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isWithinRollingPublicationWindow } from "@/content/publications";
 import { nsfAwards, researchPrograms } from "@/content/research";
+import { sitePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Research | Data-Driven Modeling Group",
@@ -13,11 +14,16 @@ export const metadata: Metadata = {
   twitter: { images: [] },
 };
 
+export const dynamic = "force-static";
+
 export default function ResearchPage() {
   return (
     <main>
       <SiteHeader />
-      <section className="inner-hero inner-hero-photo">
+      <section
+        className="inner-hero inner-hero-photo"
+        style={{ "--mountain-panorama-image": `url("${sitePath("/images/mountain-panorama.jpg")}")` } as React.CSSProperties}
+      >
         <p className="kicker">Research</p>
         <h1>Using data to understand the models we build.</h1>
         <p>Our programs span two modeling regimes: systems with more parameters than classical intuition expects, and interpretable systems whose mechanisms can be discovered from observations.</p>
@@ -52,7 +58,7 @@ export default function ResearchPage() {
                   <a className="funder-logo-link" href={program.funding.agencyHref} target="_blank" rel="noreferrer">
                     <Image
                       className="funder-logo funder-logo-doe"
-                      src={program.funding.logoSrc}
+                      src={sitePath(program.funding.logoSrc)}
                       alt={program.funding.logoAlt}
                       width={program.funding.logoWidth}
                       height={program.funding.logoHeight}
@@ -104,7 +110,7 @@ export default function ResearchPage() {
         <div className="research-support-inner">
           <div className="research-support-brand">
             <a className="nsf-logo-link" href="https://www.nsf.gov/" target="_blank" rel="noreferrer">
-              <Image className="nsf-logo" src="/images/funders/nsf-logo.png" alt="U.S. National Science Foundation" width={500} height={324} sizes="180px" />
+              <Image className="nsf-logo" src={sitePath("/images/funders/nsf-logo.png")} alt="U.S. National Science Foundation" width={500} height={324} sizes="180px" />
             </a>
             <div>
               <p className="kicker">Research support</p>

@@ -3,30 +3,35 @@ import { access, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 const publicRoutes = ["/", "/research", "/people", "/alumni", "/previous-work", "/about"];
+const routeFiles = new Map([
+  ["/", "index.html"],
+  ["/research", "research.html"],
+  ["/people", "people.html"],
+  ["/alumni", "alumni.html"],
+  ["/previous-work", "previous-work.html"],
+  ["/about", "about.html"],
+]);
+const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = configuredBasePath
+  ? `/${configuredBasePath.replace(/^\/+|\/+$/g, "")}`
+  : "";
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://jpw37.github.io/whitehead-data-modeling-site"
+).replace(/\/+$/, "");
+
+function removeBasePath(pathname) {
+  if (!basePath) return pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+  assert.ok(pathname === basePath || pathname.startsWith(`${basePath}/`), pathname);
+  const unprefixed = pathname.slice(basePath.length) || "/";
+  return unprefixed === "/" ? "/" : unprefixed.replace(/\/$/, "");
+}
 
 async function render(route = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${route}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request(`https://preview.example${route}`, {
-      headers: {
-        accept: "text/html",
-        "x-forwarded-host": "preview.example",
-        "x-forwarded-proto": "https",
-      },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+  const file = routeFiles.get(route);
+  if (!file) return new Response("Not found", { status: 404 });
+  const html = await readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
+  return new Response(html, { headers: { "content-type": "text/html; charset=utf-8" } });
 }
 
 test("renders every public route", async () => {
@@ -50,16 +55,19 @@ test("all internal links and anchors resolve", async () => {
       if (!href.startsWith("/") && !href.startsWith("#")) continue;
 
       const destination = new URL(href, `https://preview.example${sourceRoute}`);
-      if (/\.[a-z0-9]+$/i.test(destination.pathname)) {
-        await access(new URL(`../public${destination.pathname}`, import.meta.url));
+      const destinationPath = href.startsWith("#")
+        ? sourceRoute
+        : removeBasePath(destination.pathname);
+      if (/\.[a-z0-9]+$/i.test(destinationPath)) {
+        await access(new URL(`../public${destinationPath}`, import.meta.url));
         continue;
       }
 
-      assert.ok(pages.has(destination.pathname), `${sourceRoute} links to missing route ${href}`);
+      assert.ok(pages.has(destinationPath), `${sourceRoute} links to missing route ${href}`);
       if (destination.hash) {
         const id = decodeURIComponent(destination.hash.slice(1));
         assert.match(
-          pages.get(destination.pathname),
+          pages.get(destinationPath),
           new RegExp(`id="${id}"`),
           `${sourceRoute} links to missing anchor ${href}`,
         );
@@ -82,7 +90,10 @@ test("homepage leads with the group identity and carries an absolute social imag
   assert.match(html, /Discovering cloud physics/);
   assert.match(html, /historical Indonesian tsunami accounts/i);
   assert.doesNotMatch(html, /archived research program/i);
-  assert.match(html, /property="og:image" content="https:\/\/preview\.example\/og\.png"/);
+  assert.match(
+    html,
+    new RegExp(`property="og:image" content="${siteUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/og\\.png"`),
+  );
   assert.doesNotMatch(html, /Applied Math Seminar/i);
 });
 

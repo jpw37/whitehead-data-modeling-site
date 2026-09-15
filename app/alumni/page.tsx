@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   twitter: { images: [] },
 };
 
+export const dynamic = "force-static";
+
 const levels: DegreeLevel[] = ["Undergraduate", "M.S.", "Ph.D."];
 
 export default function AlumniPage() {
