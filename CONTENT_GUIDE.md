@@ -68,7 +68,9 @@ Then open `http://localhost:3000/`. Run `npm run build` before publishing.
 This project builds as a Cloudflare Worker. After pushing it to a GitHub repository, import that repository in Cloudflare Workers Builds and use:
 
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy --config dist/server/wrangler.json`
+- Deploy command: leave Cloudflare's default `npx wrangler deploy`
 - Production branch: `main`
+
+The root `wrangler.jsonc` points that default command to the built Worker and its static assets. If the Cloudflare form asks for a **build output directory** instead of showing Worker build settings, the repository was imported as a Pages project; create a Worker application instead.
 
 Cloudflare will publish each accepted commit automatically. Give the resulting public URL to the BYU administrator; the institutional address can then redirect to it, or be attached as a custom domain if the relevant DNS zone is available in the Cloudflare account.

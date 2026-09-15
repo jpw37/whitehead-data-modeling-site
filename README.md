@@ -18,13 +18,13 @@ The Research page has a rolling two-year feed for journal articles and arXiv pre
 
 ## Production on Cloudflare
 
-Push the project to GitHub, then import the repository from **Cloudflare → Workers & Pages → Create application → Import a repository**. Configure `npm run build` as the build command and `npx wrangler deploy --config dist/server/wrangler.json` as the deploy command. The Worker name should remain `whitehead-data-modeling-site`.
+Push the project to GitHub, then import the repository as a **Worker** from **Cloudflare → Workers & Pages → Create application → Import a repository**. Configure `npm run build` as the build command. The repository-level `wrangler.jsonc` lets Cloudflare use its default `npx wrangler deploy` command, so no custom deploy command is required. The Worker name should remain `whitehead-data-modeling-site`.
 
 Cloudflare’s Git integration deploys pushes to `main`. A scheduled GitHub workflow checks OpenAlex, Crossref, Semantic Scholar, and arXiv daily and commits only when the rolling two-year list changes, so a new article or preprint triggers the same deployment path without a separate database or a live dependency on a metadata service.
 
 See `CONTENT_GUIDE.md` for routine content changes, summary overrides, and publication exclusions.
 
-This starter does not use `wrangler.jsonc`.
+The root `wrangler.jsonc` describes the built Worker entry point and static assets for both local command-line deployment and Cloudflare Workers Builds.
 
 ## Included Shape
 
@@ -99,6 +99,7 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
+- `npm run deploy:cloudflare`: build and deploy from an authenticated local terminal
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
