@@ -1,0 +1,61 @@
+name: Refresh recent publications
+
+on:
+  schedule:
+    - cron: "23 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-recent-publications
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install website dependencies
+        run: npm ci
+
+      - name: Check publication indexes
+        run: node scripts/sync-publications.mjs
+
+      - name: Detect a publication change
+        id: publication-change
+        shell: bash
+        run: |
+          if git diff --quiet -- content/publications.generated.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify the updated website
+        if: steps.publication-change.outputs.changed == 'true'
+        run: npm test
+
+      - name: Lint the updated website
+        if: steps.publication-change.outputs.changed == 'true'
+        run: npm run lint
+
+      - name: Publish the metadata update to the repository
+        if: steps.publication-change.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "Publication Update Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/publications.generated.json
+          git commit -m "Update recent publications"
+          git push

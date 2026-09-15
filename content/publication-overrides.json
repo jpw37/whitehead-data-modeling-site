@@ -1,0 +1,29 @@
+{
+  "approvedArxivIds": [
+    "2609.02862"
+  ],
+  "exclude": [],
+  "preprintSeeds": [
+    {
+      "arxivId": "2609.02862",
+      "title": "Continuous data assimilation in steady Navier-Stokes equations with unknown viscosity: robust and efficient solvers and fast parameter recovery",
+      "authors": [
+        "Leo G. Rebholz",
+        "Jorge Reyes",
+        "Jared P. Whitehead"
+      ],
+      "date": "2026-09-02"
+    }
+  ],
+  "summaries": {
+    "arxiv:2609.02862": "This work develops continuous-data-assimilation solvers that recover an unknown viscosity in the steady Navier–Stokes equations from partial flow observations, with quadratic convergence and strong numerical performance even from poor initial guesses.",
+    "10.1103/qy5r-p5b7": "This work separates prediction error into model insufficiency, data insufficiency, and generalized aliasing, providing an explanation for double descent and practical guidance for model and experimental design.",
+    "10.1029/2025jh000667": "Bayesian inference and uncertainty analysis are used to reconstruct historical Indonesian earthquakes from anecdotal tsunami evidence and assess which conclusions remain robust under explicit modeling assumptions.",
+    "10.1016/j.jcp.2025.114121": "Continuous data assimilation turns online model discovery into a finite-dimensional optimization problem, allowing multiple unknown parameters to be updated as observations arrive.",
+    "10.1007/s00348-025-03991-5": "This work compares direct pressure-gradient integration with a Helmholtz–Hodge reconstruction method to characterize how measurement errors propagate into pressure fields recovered from image velocimetry.",
+    "10.1088/1361-6420/adc766": "Relaxation least-squares and Newton schemes provide a general framework for recovering unknown states and parameters together in dissipative dynamical systems.",
+    "10.1007/s11069-023-06327-w": "Field evidence from imbricated beachrock near the Java trench is used to distinguish tsunami and storm-wave impacts and examine implications for megathrust earthquakes.",
+    "10.1093/gji/ggae044": "Bayesian inference compares observations from the 1820 Flores Sea tsunami with a large ensemble of simulations to estimate the most plausible earthquake source and quantify uncertainty.",
+    "10.1103/physrevfluids.9.054602": "A complex forcing mechanism in turbulent flow can be reconstructed from partial observations containing fewer than ten percent of the modes used to describe the full system."
+  }
+}

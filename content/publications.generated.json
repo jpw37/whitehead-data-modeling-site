@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "author": {
+      "name": "Jared P. Whitehead",
+      "openAlexId": "A5033349928",
+      "semanticScholarIds": [
+        "47224789",
+        "2300737312",
+        "2284679080"
+      ],
+      "googleScholarUrl": "https://scholar.google.com/citations?user=lLR_YEYAAAAJ"
+    },
+    "sources": [
+      "OpenAlex",
+      "Crossref",
+      "Semantic Scholar",
+      "arXiv"
+    ],
+    "rollingWindowMonths": 24,
+    "cutoffDate": "2024-09-15",
+    "lastContentChange": "2026-09-15T03:54:19.008Z"
+  },
+  "publications": [
+    {
+      "key": "arxiv:2609.02862",
+      "title": "Continuous data assimilation in steady Navier-Stokes equations with unknown viscosity: robust and efficient solvers and fast parameter recovery",
+      "summary": "This work develops continuous-data-assimilation solvers that recover an unknown viscosity in the steady Navier–Stokes equations from partial flow observations, with quadratic convergence and strong numerical performance even from poor initial guesses.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Leo G. Rebholz",
+        "Jorge Reyes",
+        "Jared P. Whitehead"
+      ],
+      "date": "2026-09-02",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation": "arXiv:2609.02862 (2026)",
+      "href": "https://arxiv.org/abs/2609.02862",
+      "doi": "",
+      "type": "preprint",
+      "arxivId": "2609.02862",
+      "openAlexId": "",
+      "semanticScholarId": "",
+      "sources": [
+        "arXiv"
+      ],
+      "validatedBy": [
+        "Manually verified arXiv identifier"
+      ]
+    },
+    {
+      "key": "doi:10.1103/qy5r-p5b7",
+      "title": "Generalized aliasing explains double descent and informs model design",
+      "summary": "This work separates prediction error into model insufficiency, data insufficiency, and generalized aliasing, providing an explanation for double descent and practical guidance for model and experimental design.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Mark K. Transtrum",
+        "Gus L. W. Hart",
+        "Tyler J. Jarvis",
+        "Jared P. Whitehead"
+      ],
+      "date": "2025-09-12",
+      "year": 2025,
+      "venue": "Physical Review Research",
+      "citation": "Physical Review Research, 7(4), (2025)",
+      "href": "https://doi.org/10.1103/qy5r-p5b7",
+      "doi": "10.1103/qy5r-p5b7",
+      "type": "article",
+      "arxivId": "",
+      "openAlexId": "W4417182870",
+      "sources": [
+        "Crossref",
+        "OpenAlex"
+      ],
+      "validatedBy": [
+        "Crossref BYU affiliation",
+        "OpenAlex BYU affiliation"
+      ]
+    },
+    {
+      "key": "doi:10.1029/2025jh000667",
+      "title": "Embracing Uncertainty in “Small Data” Problems: Estimating Earthquakes From Historical Anecdotes",
+      "summary": "Bayesian inference and uncertainty analysis are used to reconstruct historical Indonesian earthquakes from anecdotal tsunami evidence and assess which conclusions remain robust under explicit modeling assumptions.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Nathan Glatt-Holtz",
+        "Robert A. Harris",
+        "Andrew J. Holbrook",
+        "J. Krometis",
+        "Y. Kurniawan",
+        "Hayden Ringer",
+        "Jared P. Whitehead"
+      ],
+      "date": "2025-09-01",
+      "year": 2025,
+      "venue": "Journal of Geophysical Research Machine Learning and Computation",
+      "citation": "Journal of Geophysical Research Machine Learning and Computation, 2(3), (2025)",
+      "href": "https://doi.org/10.1029/2025jh000667",
+      "doi": "10.1029/2025jh000667",
+      "type": "article",
+      "arxivId": "",
+      "openAlexId": "W3172786989",
+      "sources": [
+        "Crossref",
+        "OpenAlex"
+      ],
+      "validatedBy": [
+        "Crossref BYU affiliation",
+        "OpenAlex BYU affiliation"
+      ]
+    },
+    {
+      "key": "doi:10.1016/j.jcp.2025.114121",
+      "title": "Model discovery on the fly using continuous data assimilation",
+      "summary": "Continuous data assimilation turns online model discovery into a finite-dimensional optimization problem, allowing multiple unknown parameters to be updated as observations arrive.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Joshua Newey",
+        "Jared P. Whitehead",
+        "Elizabeth Carlson"
+      ],
+      "date": "2025-05-25",
+      "year": 2025,
+      "venue": "Journal of Computational Physics",
+      "citation": "Journal of Computational Physics, 537, 114121–114121, (2025)",
+      "href": "https://doi.org/10.1016/j.jcp.2025.114121",
+      "doi": "10.1016/j.jcp.2025.114121",
+      "type": "article",
+      "arxivId": "2411.13561",
+      "openAlexId": "W4410718434",
+      "semanticScholarId": "8011ddcf3fc87b6edc6932bc2a99ecec9b711fce",
+      "sources": [
+        "OpenAlex",
+        "Semantic Scholar"
+      ],
+      "validatedBy": [
+        "OpenAlex BYU affiliation",
+        "Semantic Scholar author 2300737312"
+      ]
+    },
+    {
+      "key": "doi:10.1007/s00348-025-03991-5",
+      "title": "Error propagation of direct pressure gradient integration and a Helmholtz–Hodge decomposition-based pressure field reconstruction method for image velocimetry",
+      "summary": "This work compares direct pressure-gradient integration with a Helmholtz–Hodge reconstruction method to characterize how measurement errors propagate into pressure fields recovered from image velocimetry.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Lanyu Li",
+        "Jeffrey McClure",
+        "Grady B. Wright",
+        "Jared P. Whitehead",
+        "Jin Wang",
+        "Zhao Pan"
+      ],
+      "date": "2025-04-11",
+      "year": 2025,
+      "venue": "Experiments in Fluids",
+      "citation": "Experiments in Fluids, 66(5), (2025)",
+      "href": "https://doi.org/10.1007/s00348-025-03991-5",
+      "doi": "10.1007/s00348-025-03991-5",
+      "type": "article",
+      "arxivId": "",
+      "openAlexId": "W4409357877",
+      "sources": [
+        "OpenAlex"
+      ],
+      "validatedBy": [
+        "OpenAlex BYU affiliation"
+      ]
+    },
+    {
+      "key": "doi:10.1088/1361-6420/adc766",
+      "title": "Relaxation-based schemes for on-the-fly parameter estimation in dissipative dynamical systems",
+      "summary": "Relaxation least-squares and Newton schemes provide a general framework for recovering unknown states and parameters together in dissipative dynamical systems.",
+      "summaryOrigin": "manual",
+      "authors": [
+        "Vincent R. Martinez",
+        "Jacob Murri",
+        "Jared P. Whitehead"
+      ],
+      "date": "2025-03-31",
+      "year": 2025,
+      "venue": "Inverse Problems",
+      "citation": "Inverse Problems, 41(5), 055001–055001, (2025)",
+      "href": "https://doi.org/10.1088/1361-6420/adc766",
+      "doi": "10.1088/1361-6420/adc766",
+      "type": "article",
+      "arxivId": "",
+      "openAlexId": "W4409013985",
+      "sources": [
+        "OpenAlex"
+      ],
+      "validatedBy": [
+        "OpenAlex BYU affiliation"
+      ]
+    }
+  ]
+}
