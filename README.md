@@ -18,7 +18,7 @@ The Research page has a rolling two-year feed for journal articles and arXiv pre
 
 ## Production on Cloudflare
 
-Push the project to GitHub, then import the repository as a **Worker** from **Cloudflare → Workers & Pages → Create application → Import a repository**. Configure `npm run build` as the build command. The repository-level `wrangler.jsonc` lets Cloudflare use its default `npx wrangler deploy` command, so no custom deploy command is required. The Worker name should remain `whitehead-data-modeling-site`.
+Push the project to GitHub, then go to **Cloudflare → Workers & Pages → Create application** and begin with **Connect to Git**. Choose GitHub, authorize the Cloudflare GitHub integration if prompted, and select `jpw37/whitehead-data-modeling-site`. Cloudflare then creates the Worker from that repository. Configure `npm run build` as the build command. The repository-level `wrangler.jsonc` lets Cloudflare use its default `npx wrangler deploy` command, so no custom deploy command is required. The Worker name must remain `whitehead-data-modeling-site`.
 
 Cloudflare’s Git integration deploys pushes to `main`. A scheduled GitHub workflow checks OpenAlex, Crossref, Semantic Scholar, and arXiv daily and commits only when the rolling two-year list changes, so a new article or preprint triggers the same deployment path without a separate database or a live dependency on a metadata service.
 

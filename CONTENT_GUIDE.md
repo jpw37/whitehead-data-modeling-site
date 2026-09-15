@@ -65,12 +65,12 @@ Then open `http://localhost:3000/`. Run `npm run build` before publishing.
 
 ## Cloudflare publishing
 
-This project builds as a Cloudflare Worker. After pushing it to a GitHub repository, import that repository in Cloudflare Workers Builds and use:
+This project builds as a Cloudflare Worker. After pushing it to GitHub, choose **Create application → Connect to Git** in Cloudflare, connect GitHub, and select `jpw37/whitehead-data-modeling-site`. Then use:
 
 - Build command: `npm run build`
 - Deploy command: leave Cloudflare's default `npx wrangler deploy`
 - Production branch: `main`
 
-The root `wrangler.jsonc` points that default command to the built Worker and its static assets. If the Cloudflare form asks for a **build output directory** instead of showing Worker build settings, the repository was imported as a Pages project; create a Worker application instead.
+The root `wrangler.jsonc` points that default command to the built Worker and its static assets. The GitHub connection is the first step in this Worker-creation flow. If the resulting address ends in `pages.dev`, the repository was imported as a Pages project; repeat the flow from **Create application → Connect to Git** and ensure Cloudflare is creating a Worker, whose preview address ends in `workers.dev`.
 
 Cloudflare will publish each accepted commit automatically. Give the resulting public URL to the BYU administrator; the institutional address can then redirect to it, or be attached as a custom domain if the relevant DNS zone is available in the Cloudflare account.
