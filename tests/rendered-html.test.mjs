@@ -86,6 +86,8 @@ test("homepage leads with the group identity and carries an absolute social imag
   assert.doesNotMatch(html, /<h1>Jared P\. Whitehead<\/h1>/i);
   assert.match(html, /Professor &amp; principal investigator/i);
   assert.match(html, /professor of mathematics at Brigham Young University/i);
+  assert.match(html, /alt="Portrait of Jared Whitehead"/i);
+  assert.match(html, /jared-whitehead\.jpg/i);
   assert.doesNotMatch(html, /associate professor/i);
   assert.match(html, /href="https:\/\/math\.byu\.edu\/"/i);
   assert.match(html, /href="https:\/\/www\.byu\.edu\/"/i);

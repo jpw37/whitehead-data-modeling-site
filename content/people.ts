@@ -29,6 +29,7 @@ const principalInvestigator: Person = {
   affiliation: "Brigham Young University",
   bio:
     "Jared Whitehead is a professor of mathematics at Brigham Young University. His group studies how data can be used to build, understand, and improve mathematical models, from highly over-parameterized learning systems to interpretable models of physical processes.",
+  photo: "/images/jared-whitehead.jpg",
   links: [
     { label: "BYU Mathematics", href: "https://math.byu.edu/" },
     { label: "Google Scholar", href: "https://scholar.google.com/citations?user=lLR_YEYAAAAJ" },

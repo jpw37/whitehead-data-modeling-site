@@ -11,7 +11,7 @@ export function PersonProfile({ person, compact = false }: { person: Person; com
   return (
     <article className={`person-card${compact ? " person-card-compact" : ""}`} id={person.slug}>
       {person.photo ? (
-        <Image className="portrait-photo" src={sitePath(person.photo)} alt={`Portrait of ${person.name}`} width={720} height={720} />
+        <Image className="portrait-photo" src={sitePath(person.photo)} alt={`Portrait of ${person.name}`} width={800} height={1000} sizes="180px" />
       ) : (
         <div className="portrait-placeholder" aria-hidden="true">{initials(person.name)}</div>
       )}
