@@ -156,6 +156,15 @@ h1 {
   font-size: 15px;
 }
 
+.hero-byline a {
+  border-bottom: 1px solid rgba(16, 42, 51, 0.35);
+  color: var(--ink);
+}
+
+.hero-byline a:hover, .hero-byline a:focus-visible {
+  border-color: currentColor;
+}
+
 .hero-question {
   max-width: 660px;
   margin-bottom: 18px;

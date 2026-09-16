@@ -8,6 +8,7 @@ export function SiteFooter() {
       <div className="footer-links">
         <a href="https://math.byu.edu/" target="_blank" rel="noreferrer">BYU Mathematics</a>
         <a href="https://acme.byu.edu/" target="_blank" rel="noreferrer">BYU ACME</a>
+        <a href="https://www.churchofjesuschrist.org/" target="_blank" rel="noreferrer">The Church of Jesus Christ of Latter-day Saints</a>
         <a href="mailto:whitehead@mathematics.byu.edu">Email</a>
       </div>
     </footer>

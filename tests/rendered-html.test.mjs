@@ -84,6 +84,14 @@ test("homepage leads with the group identity and carries an absolute social imag
   assert.match(html, /<h1>Data-Driven Modeling Group<\/h1>/i);
   assert.match(html, /<strong>Jared P\. Whitehead<\/strong>/i);
   assert.doesNotMatch(html, /<h1>Jared P\. Whitehead<\/h1>/i);
+  assert.match(html, /Professor &amp; principal investigator/i);
+  assert.match(html, /professor of mathematics at Brigham Young University/i);
+  assert.doesNotMatch(html, /associate professor/i);
+  assert.match(html, /href="https:\/\/math\.byu\.edu\/"/i);
+  assert.match(html, /href="https:\/\/www\.byu\.edu\/"/i);
+  assert.match(html, /Members, past &amp; present\./i);
+  assert.doesNotMatch(html, /Built to stay current|One record per person/i);
+  assert.match(html, /href="https:\/\/www\.churchofjesuschrist\.org\/"/i);
   assert.match(html, /Mathematics · Data · Physical systems/);
   assert.match(html, /Generalization in complex models/);
   assert.match(html, /Interpretable models from data/);

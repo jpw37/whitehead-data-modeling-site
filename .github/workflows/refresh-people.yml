@@ -1,0 +1,80 @@
+name: Refresh approved student profiles
+
+on:
+  schedule:
+    - cron: "41 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-approved-student-profiles
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      changed: ${{ steps.profile-change.outputs.changed }}
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install website dependencies
+        run: npm ci
+
+      - name: Confirm the approved-feed URL is configured
+        env:
+          PROFILE_FEED_URL: ${{ vars.PROFILE_FEED_URL }}
+        run: test -n "$PROFILE_FEED_URL"
+
+      - name: Check approved profile submissions
+        env:
+          PROFILE_FEED_URL: ${{ vars.PROFILE_FEED_URL }}
+        run: npm run people:update
+
+      - name: Detect a profile change
+        id: profile-change
+        shell: bash
+        run: |
+          if test -z "$(git status --porcelain -- content/student-profiles.generated.json public/images/people)"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify the updated website
+        if: steps.profile-change.outputs.changed == 'true'
+        run: npm test
+
+      - name: Lint the updated website
+        if: steps.profile-change.outputs.changed == 'true'
+        run: npm run lint
+
+      - name: Publish the approved profile update to the repository
+        if: steps.profile-change.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "Student Profile Update Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/student-profiles.generated.json public/images/people
+          git commit -m "Update approved student profiles"
+          git pull --rebase
+          git push
+
+  publish:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml

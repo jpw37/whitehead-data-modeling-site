@@ -40,7 +40,11 @@ The Research page contains a rolling two-year feed for journal articles and arXi
 
 `.github/workflows/refresh-publications.yml` checks OpenAlex, Crossref, Semantic Scholar, and arXiv daily. When the generated publication data changes, it commits the update and calls the Pages workflow directly, ensuring the new static site is published even though the commit was created by GitHub Actions.
 
-See `CONTENT_GUIDE.md` for routine member, alumni, collaborator, research-highlight, image, and publication-summary updates.
+## Student profile updates
+
+Current students can submit an approved bio, degree level, research interests, links, and an optional portrait through a Google Form. Its linked response sheet remains private and moderated: only rows marked `Approved` enter the website feed. `.github/workflows/refresh-people.yml` checks that feed daily, validates the public fields, normalizes photographs, and republishes the site when something changes.
+
+See `google-apps-script/README.md` for the one-time Google setup and `CONTENT_GUIDE.md` for routine member, alumni, collaborator, research-highlight, image, and publication-summary updates.
 
 ## Useful commands
 
@@ -49,6 +53,7 @@ See `CONTENT_GUIDE.md` for routine member, alumni, collaborator, research-highli
 - `npm run lint`: check source formatting and code quality
 - `npm test`: build and run rendered-content and static-export tests
 - `npm run publications:update`: refresh the rolling publication metadata
+- `npm run people:update`: import approved Google Form profile submissions
 
 ## Framework documentation
 

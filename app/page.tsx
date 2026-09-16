@@ -16,10 +16,11 @@ export default function Home() {
         <div className="hero-copy">
           <p className="kicker">Mathematics · Data · Physical systems</p>
           <h1>Data-Driven Modeling Group</h1>
-          <p className="hero-byline">
+          <div className="hero-byline">
             <strong>Jared P. Whitehead</strong>
-            <span>Brigham Young University</span>
-          </p>
+            <a href="https://math.byu.edu/" target="_blank" rel="noreferrer">BYU Mathematics <span aria-hidden="true">↗</span></a>
+            <a href="https://www.byu.edu/" target="_blank" rel="noreferrer">Brigham Young University <span aria-hidden="true">↗</span></a>
+          </div>
           <h2 className="hero-question">What can data teach us about the models we trust?</h2>
           <p className="hero-intro">
             We use data to understand, construct, and improve mathematical
@@ -95,9 +96,9 @@ export default function Home() {
           </div>
 
           <aside className="directory-note">
-            <p className="kicker">Built to stay current</p>
-            <h3>One record per person.</h3>
-            <p>Each profile can include a degree level, short bio, research programs, personal links, and an optional portrait. Alumni remain part of the group history.</p>
+            <p className="kicker">Team</p>
+            <h3>Members, past &amp; present.</h3>
+            <p>Meet the students and alumni who contribute to the group’s research and shared history.</p>
             <div className="stacked-links">
               <a href={sitePath("/people/")}>Current members <span aria-hidden="true">→</span></a>
               <a href={sitePath("/alumni/")}>Group alumni <span aria-hidden="true">→</span></a>

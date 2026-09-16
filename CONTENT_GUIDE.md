@@ -4,16 +4,15 @@ Most routine updates live in four small data files. Editing these files updates 
 
 ## Current group members
 
-Edit `content/people.ts`.
+Student profiles are collected with a Google Form and reviewed in its private linked response spreadsheet. Choose `Approved` in the `Website approval` column only after checking the submitted wording, links, degree level, and portrait. The approved profile is added during the next daily GitHub refresh; the **Refresh approved student profiles** workflow can also be run manually from the Actions tab.
 
-- Add or remove one object in the `people` array.
-- Set `active: true` for current members and `active: false` when someone moves to the alumni directory.
-- Use `levels` to show `Undergraduate`, `M.S.`, or `Ph.D.` badges. A person may have more than one.
-- Add a short `bio`, one or more `programs`, and optional website links.
-- Put portraits in `public/images/people/` and set `photo` to a public path such as `/images/people/jane-doe.jpg`.
-- Set `verified: true` only after the person's current status and details have been confirmed.
+- Form responses and uploaded source photographs stay private in Google Drive. Only approved public fields are exported.
+- Students should submit a new response for every correction or removal. Do not edit or unapprove a row after it has synced; approve the newer request instead.
+- Portraits are automatically cropped to a 4:5 ratio at 800 × 1000 pixels and rewritten without embedded metadata.
+- `content/student-profiles.seed.json` is the starting roster. `content/student-profiles.generated.json` and `public/images/people/` are maintained by the sync workflow.
+- Jared's profile remains hand-maintained in `content/people.ts`.
 
-The CV-derived names currently marked `verified: false` appear in the clearly labeled roster-review section on the People page.
+Full setup and troubleshooting instructions are in `google-apps-script/README.md`.
 
 ## Alumni
 
@@ -43,6 +42,13 @@ The “Publications from the past two years” section is generated from `conten
 - Edit `content/publication-overrides.json` to replace an automated summary or exclude a DOI or arXiv identifier. A hand-edited summary is never overwritten by later metadata refreshes.
 - `approvedArxivIds` confirms an arXiv result when only initials are available. `preprintSeeds` provides a verified fallback record while external author indexes catch up; normal source data replaces or enriches the seed automatically.
 - Run `npm run publications:update` to check immediately. GitHub also exposes a manual “Run workflow” button for the same purpose.
+
+## Automatically refreshed student profiles
+
+- `scripts/sync-student-profiles.mjs` reads only the reviewed Apps Script feed configured in the `PROFILE_FEED_URL` GitHub Actions variable.
+- The importer strictly validates names, degree levels, research areas, links, and images. It rejects non-web links, unknown values, oversized files, or an altered approval history.
+- `.github/workflows/refresh-people.yml` checks once daily, commits only actual changes, and calls the GitHub Pages deployment workflow.
+- Run `PROFILE_FEED_URL="https://script.google.com/macros/s/…/exec" npm run people:update` for an immediate local check.
 
 ## Collaborators and partner institutions
 

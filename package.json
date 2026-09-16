@@ -11,7 +11,8 @@
     "postbuild": "node scripts/finalize-static-export.mjs",
     "start": "vinext start",
     "publications:update": "node scripts/sync-publications.mjs",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/static-export.test.mjs",
+    "people:update": "node scripts/sync-student-profiles.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/static-export.test.mjs tests/student-profile-sync.test.mjs",
     "test:static": "node --test tests/static-export.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
@@ -19,7 +20,8 @@
   "dependencies": {
     "drizzle-orm": "0.45.2",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "@eslint/js": "9.39.4",
