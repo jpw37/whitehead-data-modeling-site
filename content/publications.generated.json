@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-09-15",
-    "lastContentChange": "2026-09-15T03:54:19.008Z"
+    "cutoffDate": "2024-09-16",
+    "lastContentChange": "2026-09-16T12:39:31.181Z"
   },
   "publications": [
     {
@@ -45,7 +45,9 @@
         "arXiv"
       ],
       "validatedBy": [
-        "Manually verified arXiv identifier"
+        "Approved arXiv identifier",
+        "Manually verified arXiv identifier",
+        "arXiv title cross-indexed to a selected author profile"
       ]
     },
     {
