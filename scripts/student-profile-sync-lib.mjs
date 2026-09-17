@@ -41,9 +41,13 @@ function safeUrl(value, label) {
   const normalized = text(value, label, { max: 500 });
   if (!normalized) return "";
 
+  const hasScheme = /^[A-Za-z][A-Za-z0-9+.-]*:/.test(normalized);
+  const looksLikeDomain = /^(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}(?::\d+)?(?:[/?#]|$)/i.test(normalized);
+  const candidate = !hasScheme && looksLikeDomain ? `https://${normalized}` : normalized;
+
   let url;
   try {
-    url = new URL(normalized);
+    url = new URL(candidate);
   } catch {
     throw new Error(`${label} must be a complete web address.`);
   }

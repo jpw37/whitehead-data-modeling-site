@@ -83,6 +83,19 @@ test("a later text-only update preserves an approved portrait", () => {
   assert.deepEqual({ ...result.generated.meta.photoVersions }, { "student-one": "photo-001" });
 });
 
+test("bare domain links are normalized to HTTPS", () => {
+  const result = applyApprovedProfileFeed(seed, feed([{
+    ...update,
+    website: "example.edu/student-one",
+    professionalLink: "www.linkedin.com/in/student-one",
+  }]));
+
+  assert.deepEqual(result.generated.profiles[0].links, [
+    { label: "Website", href: "https://example.edu/student-one" },
+    { label: "Professional profile", href: "https://www.linkedin.com/in/student-one" },
+  ]);
+});
+
 test("previously published approvals cannot silently disappear or change", () => {
   const first = applyApprovedProfileFeed(seed, feed([update]));
 
@@ -100,6 +113,10 @@ test("unsafe links and unsupported research areas are rejected", () => {
   assert.throws(
     () => applyApprovedProfileFeed(seed, feed([{ ...update, website: "javascript:alert(1)" }])),
     /must use http or https/,
+  );
+  assert.throws(
+    () => applyApprovedProfileFeed(seed, feed([{ ...update, website: "not a web address" }])),
+    /must be a complete web address/,
   );
   assert.throws(
     () => applyApprovedProfileFeed(seed, feed([{ ...update, researchAreas: ["Secret project"] }])),
