@@ -31,8 +31,8 @@ The form options must also match the constants near the top of `ProfileFeed.gs`.
 
 1. Link the form to a new Google response spreadsheet.
 2. Open Apps Script and create a project owned by the form owner.
-3. Replace the starter code with `ProfileFeed.gs`. If the form is replaced, update its ID at the top of the file; the linked response spreadsheet is discovered automatically.
-4. Save and run `setupProfileSystem` once. Accept the requested Forms, Sheets, Drive, and trigger permissions. The setup fixes the form branching, adds `Website approval` and `Website review notes` columns plus an approval dropdown, assigns hidden permanent submission IDs, and installs the response trigger.
+3. Replace the starter code with `ProfileFeed.gs`, add `Authorization.gs`, and copy `appsscript.json` into the project manifest. If the form is replaced, update its ID at the top of `ProfileFeed.gs`; the linked response spreadsheet is discovered automatically.
+4. Save and run `setupProfileSystem` once, then run `authorizeProfilePortraits` once. Accept the requested Forms, Sheets, read-only Drive, and trigger permissions. The setup fixes the form branching, adds `Website approval` and `Website review notes` columns plus an approval dropdown, assigns hidden permanent submission IDs, installs the response trigger, and authorizes access to approved portrait uploads.
 5. Choose **Deploy → New deployment → Web app**. Execute as yourself and permit access to anyone with the link. Copy the `/exec` URL.
 6. Open the `/exec` URL in a signed-out browser. A working empty feed looks like `{"schemaVersion":1,"generatedAt":"…","submissions":[]}`.
 7. In GitHub, open **Settings → Secrets and variables → Actions → Variables** and create `PROFILE_FEED_URL` with that `/exec` URL.

@@ -2,9 +2,17 @@
   "meta": {
     "schemaVersion": 1,
     "source": "Google Forms approved-response feed",
-    "sourceUpdatedAt": null,
-    "sourceEvents": {},
-    "photoVersions": {}
+    "sourceUpdatedAt": "2026-09-16T17:16:26.418Z",
+    "sourceEvents": {
+      "response-b2d7c827-2598-4013-a8b9-bf12a72087af": "8fd4104c90a734834fd73a588d6da3138c99c75a6d5217ad45f4f56cbca243ef",
+      "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41": "d57e26e9eee89d385169296b94c2a6a0a7ab00b9c7fd2a641ff04fd5902bcb02",
+      "response-bfafadab-4de6-4699-b556-d7a66d66c91c": "ec6cfc98a2f855f463b557ee49731063ba977e0fe43990e53d0c3ea44cf870a3"
+    },
+    "photoVersions": {
+      "thea-spigarelli": "response-b2d7c827-2598-4013-a8b9-bf12a72087af",
+      "dawson-collins": "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41",
+      "ashtyn-whipple": "response-bfafadab-4de6-4699-b556-d7a66d66c91c"
+    }
   },
   "profiles": [
     {
@@ -24,24 +32,50 @@
       "name": "Ashtyn Whipple",
       "role": "Undergraduate researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Ashtyn Whipple is an Applied Mathematics student at Brigham Young University with experience in mathematical modeling, computational research, programming, and data analysis. Her interests include using quantitative and analytical methods to solve complex problems and inform decision-making. Ashtyn plans to continue developing her analytical and computational skills while pursuing opportunities that combine quantitative problem-solving, collaboration, and business strategy.",
       "levels": [
         "Undergraduate"
       ],
-      "years": "2024–present",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "2.5",
+      "programs": [
+        "Discovering cloud physics"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "href": "https://github.com/ashtynwhipple"
+        },
+        {
+          "label": "Professional profile",
+          "href": "https://www.linkedin.com/in/ashtyn-whipple"
+        }
+      ],
+      "photo": "/images/people/ashtyn-whipple.jpg"
     },
     {
       "slug": "thea-spigarelli",
-      "name": "Thea Spigarelli",
+      "name": "Thea",
       "role": "Undergraduate researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Thea is a senior studying Physics and Astronomy with research interests in cloud physics, atmospheric science, and dynamical systems. She is particularly interested in using mathematical and computational approaches to understand the physical processes that govern clouds and the atmosphere. After completing her undergraduate degree, Thea plans to pursue a PhD in atmospheric science and continue conducting research that advances our understanding in this field.",
       "levels": [
         "Undergraduate"
       ],
-      "years": "2024–present",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "3",
+      "programs": [
+        "Discovering cloud physics"
+      ],
+      "links": [
+        {
+          "label": "Professional profile",
+          "href": "https://www.linkedin.com/in/thea-spigarelli-748831383"
+        }
+      ],
+      "photo": "/images/people/thea-spigarelli.jpg"
     },
     {
       "slug": "quinn-oveson",
@@ -96,12 +130,19 @@
       "name": "Dawson Collins",
       "role": "Doctoral researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Dawson is a PhD student in Applied Mathematics at Brigham Young University, researching methods for data assimilation under the direction of Professor Jared Whitehead. He earned an MS in Mathematics from BYU and a BS in Mathematics through BYU's ACME (Applied and Computational Mathematics Emphasis) program. Dawson plans to pursue a career in data science following graduation.",
       "levels": [
         "Ph.D."
       ],
-      "years": "Current",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "1",
+      "programs": [
+        "Generalization in complex models",
+        "Interpretable models from data",
+        "Discovering cloud physics"
+      ],
+      "photo": "/images/people/dawson-collins.jpg"
     },
     {
       "slug": "wyatt-wimmer",

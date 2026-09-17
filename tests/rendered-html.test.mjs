@@ -176,18 +176,18 @@ test("generated publication records use a validated rolling two-year window", as
 test("people page shows only the confirmed current roster", async () => {
   const peopleHtml = await (await render("/people")).text();
 
-  for (const name of [
-    "Ashley Spencer",
-    "Ashtyn Whipple",
-    "Thea Spigarelli",
-    "Quinn Oveson",
-    "Lydia Tolman",
-    "Tiara Eddington",
-    "Eli Sampson",
-    "Dawson Collins",
-    "Wyatt Wimmer",
+  for (const slug of [
+    "ashley-spencer",
+    "ashtyn-whipple",
+    "thea-spigarelli",
+    "quinn-oveson",
+    "lydia-tolman",
+    "tiara-eddington",
+    "eli-sampson",
+    "dawson-collins",
+    "wyatt-wimmer",
   ]) {
-    assert.match(peopleHtml, new RegExp(name));
+    assert.match(peopleHtml, new RegExp(`id="${slug}"`));
   }
 
   for (const name of ["Garrett Carver", "Ashley Avery", "Paul Smith", "Nathan Schill", "Melanie Neller"]) {
