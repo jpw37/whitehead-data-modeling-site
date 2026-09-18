@@ -2,16 +2,18 @@
   "meta": {
     "schemaVersion": 1,
     "source": "Google Forms approved-response feed",
-    "sourceUpdatedAt": "2026-09-16T17:16:26.418Z",
+    "sourceUpdatedAt": "2026-09-18T03:35:42.536Z",
     "sourceEvents": {
       "response-b2d7c827-2598-4013-a8b9-bf12a72087af": "8fd4104c90a734834fd73a588d6da3138c99c75a6d5217ad45f4f56cbca243ef",
       "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41": "d57e26e9eee89d385169296b94c2a6a0a7ab00b9c7fd2a641ff04fd5902bcb02",
-      "response-bfafadab-4de6-4699-b556-d7a66d66c91c": "ec6cfc98a2f855f463b557ee49731063ba977e0fe43990e53d0c3ea44cf870a3"
+      "response-bfafadab-4de6-4699-b556-d7a66d66c91c": "ec6cfc98a2f855f463b557ee49731063ba977e0fe43990e53d0c3ea44cf870a3",
+      "response-147bb223-42a3-4c91-8c18-01d41da565fa": "de08a3a1f6ea92d37db7652e70c3059a16a397d07aff2755cf7e7a088d8c414e"
     },
     "photoVersions": {
       "thea-spigarelli": "response-b2d7c827-2598-4013-a8b9-bf12a72087af",
       "dawson-collins": "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41",
-      "ashtyn-whipple": "response-bfafadab-4de6-4699-b556-d7a66d66c91c"
+      "ashtyn-whipple": "response-bfafadab-4de6-4699-b556-d7a66d66c91c",
+      "tiara-eddington": "response-147bb223-42a3-4c91-8c18-01d41da565fa"
     }
   },
   "profiles": [
@@ -106,12 +108,23 @@
       "name": "Tiara Eddington",
       "role": "Graduate researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Tiara Eddington is a Master’s student and graduate research assistant in mathematics at Brigham Young University. Her research interests are in scientific machine learning, specifically uncertainty quantification for data assimilation and parameter recovery methods. Her current research project targets the development of efficient sampling algorithms for Bayesian inverse problems. Following her master's degree, Tiara plans to pursue a doctoral degree in applied mathematics.",
       "levels": [
         "M.S."
       ],
-      "years": "2025–present",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "1",
+      "programs": [
+        "Interpretable models from data"
+      ],
+      "links": [
+        {
+          "label": "Professional profile",
+          "href": "https://www.linkedin.com/in/tiaraeddington"
+        }
+      ],
+      "photo": "/images/people/tiara-eddington.jpg"
     },
     {
       "slug": "eli-sampson",
