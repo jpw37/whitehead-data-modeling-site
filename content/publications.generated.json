@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-09-16",
-    "lastContentChange": "2026-09-16T12:39:31.181Z"
+    "cutoffDate": "2024-09-26",
+    "lastContentChange": "2026-09-26T12:17:22.657Z"
   },
   "publications": [
     {
@@ -40,13 +40,15 @@
       "type": "preprint",
       "arxivId": "2609.02862",
       "openAlexId": "",
-      "semanticScholarId": "",
+      "semanticScholarId": "f66ef1561e40626c2537d308e7efe4b2c7de4915",
       "sources": [
+        "Semantic Scholar",
         "arXiv"
       ],
       "validatedBy": [
         "Approved arXiv identifier",
         "Manually verified arXiv identifier",
+        "Semantic Scholar author 47224789",
         "arXiv title cross-indexed to a selected author profile"
       ]
     },
