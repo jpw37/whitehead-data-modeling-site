@@ -2,18 +2,20 @@
   "meta": {
     "schemaVersion": 1,
     "source": "Google Forms approved-response feed",
-    "sourceUpdatedAt": "2026-09-18T03:35:42.536Z",
+    "sourceUpdatedAt": "2026-09-21T16:06:44.006Z",
     "sourceEvents": {
       "response-b2d7c827-2598-4013-a8b9-bf12a72087af": "8fd4104c90a734834fd73a588d6da3138c99c75a6d5217ad45f4f56cbca243ef",
       "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41": "d57e26e9eee89d385169296b94c2a6a0a7ab00b9c7fd2a641ff04fd5902bcb02",
       "response-bfafadab-4de6-4699-b556-d7a66d66c91c": "ec6cfc98a2f855f463b557ee49731063ba977e0fe43990e53d0c3ea44cf870a3",
-      "response-147bb223-42a3-4c91-8c18-01d41da565fa": "de08a3a1f6ea92d37db7652e70c3059a16a397d07aff2755cf7e7a088d8c414e"
+      "response-147bb223-42a3-4c91-8c18-01d41da565fa": "de08a3a1f6ea92d37db7652e70c3059a16a397d07aff2755cf7e7a088d8c414e",
+      "response-00728136-0566-4f71-846a-bb8a56ab899f": "1899d5e1a254ca81d352c56555a5d40cdc9507ee4be03b25b097c90c2cba59c8"
     },
     "photoVersions": {
       "thea-spigarelli": "response-b2d7c827-2598-4013-a8b9-bf12a72087af",
       "dawson-collins": "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41",
       "ashtyn-whipple": "response-bfafadab-4de6-4699-b556-d7a66d66c91c",
-      "tiara-eddington": "response-147bb223-42a3-4c91-8c18-01d41da565fa"
+      "tiara-eddington": "response-147bb223-42a3-4c91-8c18-01d41da565fa",
+      "wyatt-wimmer": "response-00728136-0566-4f71-846a-bb8a56ab899f"
     }
   },
   "profiles": [
@@ -162,12 +164,18 @@
       "name": "Wyatt Wimmer",
       "role": "Graduate researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Wyatt is a masters student in the math department. He is interested in applications of math, particularly probability, to real world problems. Most of his prior work with Jared has centered around modeling earthquakes. In particular, the work has involved inferring earthquake geometry from ground displacement data using linear regression and Markov Chain Monte Carlo (MCMC). In the future, Wyatt plans on applying to PhD programs in applied math, as well as jobs in industry.",
       "levels": [
         "M.S."
       ],
-      "years": "2025–present",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "4",
+      "programs": [
+        "Generalization in complex models",
+        "Interpretable models from data"
+      ],
+      "photo": "/images/people/wyatt-wimmer.jpg"
     }
   ]
 }
