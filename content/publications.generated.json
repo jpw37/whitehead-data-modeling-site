@@ -17,10 +17,36 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-09-26",
-    "lastContentChange": "2026-09-26T12:17:22.657Z"
+    "cutoffDate": "2024-10-05",
+    "lastContentChange": "2026-10-05T16:10:45.216Z"
   },
   "publications": [
+    {
+      "key": "arxiv:2610.02686",
+      "title": "Asymptotic approximation of sensitivities in finite dimensional continuous data assimilation with application to parameter estimation",
+      "summary": "The authors develop a rigorous justification for a parameter estimation algorithm which couples continuous data assimilation to generic optimization.",
+      "summaryOrigin": "abstract",
+      "authors": [
+        "Joshua Newey",
+        "J. Whitehead"
+      ],
+      "date": "2026-10-02",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation": "arXiv:2610.02686 (2026)",
+      "href": "https://arxiv.org/abs/2610.02686",
+      "doi": "",
+      "type": "preprint",
+      "arxivId": "2610.02686",
+      "openAlexId": "",
+      "semanticScholarId": "ffc0e40025536702c076f69aa5a80e5bb6651bdb",
+      "sources": [
+        "Semantic Scholar"
+      ],
+      "validatedBy": [
+        "Semantic Scholar author 2300737312"
+      ]
+    },
     {
       "key": "arxiv:2609.02862",
       "title": "Continuous data assimilation in steady Navier-Stokes equations with unknown viscosity: robust and efficient solvers and fast parameter recovery",
