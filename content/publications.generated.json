@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-10-05",
-    "lastContentChange": "2026-10-05T16:10:45.216Z"
+    "cutoffDate": "2024-10-09",
+    "lastContentChange": "2026-10-09T14:26:03.544Z"
   },
   "publications": [
     {
@@ -38,12 +38,14 @@
       "doi": "",
       "type": "preprint",
       "arxivId": "2610.02686",
-      "openAlexId": "",
+      "openAlexId": "W7220748472",
       "semanticScholarId": "ffc0e40025536702c076f69aa5a80e5bb6651bdb",
       "sources": [
+        "OpenAlex",
         "Semantic Scholar"
       ],
       "validatedBy": [
+        "OpenAlex BYU affiliation",
         "Semantic Scholar author 2300737312"
       ]
     },
