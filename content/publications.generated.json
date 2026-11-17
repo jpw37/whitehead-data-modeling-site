@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-10-09",
-    "lastContentChange": "2026-10-09T14:26:03.544Z"
+    "cutoffDate": "2024-11-17",
+    "lastContentChange": "2026-11-17T16:57:32.155Z"
   },
   "publications": [
     {
@@ -46,7 +46,8 @@
       ],
       "validatedBy": [
         "OpenAlex BYU affiliation",
-        "Semantic Scholar author 2300737312"
+        "Semantic Scholar author 2300737312",
+        "Semantic Scholar author 47224789"
       ]
     },
     {
@@ -167,7 +168,8 @@
       ],
       "validatedBy": [
         "OpenAlex BYU affiliation",
-        "Semantic Scholar author 2300737312"
+        "Semantic Scholar author 2300737312",
+        "Semantic Scholar author 47224789"
       ]
     },
     {
