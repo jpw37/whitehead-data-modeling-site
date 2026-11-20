@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-11-17",
-    "lastContentChange": "2026-11-17T16:57:32.155Z"
+    "cutoffDate": "2024-11-20",
+    "lastContentChange": "2026-11-20T16:14:51.965Z"
   },
   "publications": [
     {
@@ -92,10 +92,10 @@
         "Tyler J. Jarvis",
         "Jared P. Whitehead"
       ],
-      "date": "2025-09-12",
+      "date": "2025-12-08",
       "year": 2025,
       "venue": "Physical Review Research",
-      "citation": "Physical Review Research, 7(4), (2025)",
+      "citation": "Physical Review Research, 7(4), 043268, (2025)",
       "href": "https://doi.org/10.1103/qy5r-p5b7",
       "doi": "10.1103/qy5r-p5b7",
       "type": "article",
@@ -127,7 +127,7 @@
       "date": "2025-09-01",
       "year": 2025,
       "venue": "Journal of Geophysical Research Machine Learning and Computation",
-      "citation": "Journal of Geophysical Research Machine Learning and Computation, 2(3), (2025)",
+      "citation": "Journal of Geophysical Research Machine Learning and Computation, 2(3), e2025JH000667, (2025)",
       "href": "https://doi.org/10.1029/2025jh000667",
       "doi": "10.1029/2025jh000667",
       "type": "article",
@@ -188,7 +188,7 @@
       "date": "2025-04-11",
       "year": 2025,
       "venue": "Experiments in Fluids",
-      "citation": "Experiments in Fluids, 66(5), (2025)",
+      "citation": "Experiments in Fluids, 66(5), 92, (2025)",
       "href": "https://doi.org/10.1007/s00348-025-03991-5",
       "doi": "10.1007/s00348-025-03991-5",
       "type": "article",
