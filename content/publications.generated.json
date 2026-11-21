@@ -17,8 +17,8 @@
       "arXiv"
     ],
     "rollingWindowMonths": 24,
-    "cutoffDate": "2024-11-20",
-    "lastContentChange": "2026-11-20T16:14:51.965Z"
+    "cutoffDate": "2024-11-21",
+    "lastContentChange": "2026-11-21T15:27:32.208Z"
   },
   "publications": [
     {
@@ -211,7 +211,7 @@
         "Jacob Murri",
         "Jared P. Whitehead"
       ],
-      "date": "2025-03-31",
+      "date": "2025-04-11",
       "year": 2025,
       "venue": "Inverse Problems",
       "citation": "Inverse Problems, 41(5), 055001–055001, (2025)",
