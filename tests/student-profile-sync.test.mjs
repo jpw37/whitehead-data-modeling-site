@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { createContext, runInContext } from "node:vm";
 import { applyApprovedProfileFeed } from "../scripts/student-profile-sync-lib.mjs";
 
 const seed = {
@@ -38,6 +40,39 @@ const update = {
   professionalLink: "https://github.com/example/student-one",
   photoToken: "photo-001",
 };
+
+test("the form feed identifies new submissions by name and preserves legacy profile targets", async () => {
+  const source = await readFile(new URL("../google-apps-script/ProfileFeed.gs", import.meta.url), "utf8");
+  const context = createContext({ Date });
+  runInContext(source, context);
+  const headers = [...context.requiredHeaders_()];
+  const legacyHeader = "Which profile is this request for?";
+  assert.ok(!headers.includes(legacyHeader));
+  const fields = {
+    Timestamp: new Date("2026-11-24T17:00:00Z"),
+    "Website submission ID": "response-test-001",
+    Request: "Add or update my profile",
+    "Preferred display name": "Student One",
+    "Degree level": "M.S.",
+    "Brief bio": update.bio,
+    "Publication permission": "I approve publication of the submitted text, links, and photograph on the Data-Driven Modeling Group website.",
+  };
+  function submission(extra = {}, includeLegacy = false) {
+    const names = includeLegacy ? [...headers, legacyHeader] : headers;
+    const columns = Object.fromEntries(names.map((name, index) => [name, index]));
+    const input = { ...fields, ...extra };
+    const row = names.map((name) => input[name] ?? "");
+    const displayRow = row.map((value) => String(value));
+    return context.buildSubmission_(2, row, displayRow, [], columns);
+  }
+
+  assert.equal(submission().profileId, "student-one");
+  assert.equal(submission({ [legacyHeader]: "" }, true).profileId, "student-one");
+  assert.equal(submission({ [legacyHeader]: "New profile" }, true).profileId, "student-one");
+  assert.equal(submission({ [legacyHeader]: "Original Student Name" }, true).profileId, "original-student-name");
+  assert.equal(submission({ Request: "Remove my profile" }).action, "remove");
+  assert.throws(() => submission({ "Preferred display name": "" }), /does not identify a profile/);
+});
 
 test("approved updates produce complete public profiles", () => {
   const result = applyApprovedProfileFeed(seed, feed([update]));

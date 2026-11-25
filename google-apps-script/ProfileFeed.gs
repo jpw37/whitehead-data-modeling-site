@@ -15,7 +15,7 @@ const APPROVED_STATUS = "Approved";
 const QUESTION = Object.freeze({
   timestamp: "Timestamp",
   name: "Preferred display name",
-  target: "Which profile is this request for?",
+  target: "Which profile is this request for?", // Legacy responses only; optional for new submissions.
   request: "Request",
   degree: "Degree level",
   years: "Years with the group",
@@ -222,7 +222,7 @@ function buildSubmission_(rowNumber, row, displayRow, richTextRow, columns) {
   const request = cell_(displayRow, columns, QUESTION.request);
   const target = cell_(displayRow, columns, QUESTION.target);
   const name = cell_(displayRow, columns, QUESTION.name);
-  const profileId = slugify_(target === NEW_PROFILE ? name : target);
+  const profileId = slugify_(target && target !== NEW_PROFILE ? target : name);
 
   if (!profileId) throw new Error("Approved row " + rowNumber + " does not identify a profile.");
   if (request === REQUEST.remove) {
@@ -270,7 +270,7 @@ function buildSubmission_(rowNumber, row, displayRow, richTextRow, columns) {
 }
 
 function requiredHeaders_() {
-  return Object.keys(QUESTION).map((key) => QUESTION[key]).concat([
+  return Object.keys(QUESTION).filter((key) => key !== "target").map((key) => QUESTION[key]).concat([
     REVIEW_STATUS_HEADER,
     SUBMISSION_ID_HEADER,
   ]);

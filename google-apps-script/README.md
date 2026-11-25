@@ -13,7 +13,6 @@ Unreviewed responses, email addresses, reviewer notes, and private Drive file ID
 The response sheet headers must match these titles exactly:
 
 - `Preferred display name`
-- `Which profile is this request for?`
 - `Request`
 - `Degree level`
 - `Years with the group`
@@ -26,6 +25,8 @@ The response sheet headers must match these titles exactly:
 - `Publication permission`
 
 The form options must also match the constants near the top of `ProfileFeed.gs`. Students should submit a new response for every later correction; response editing should remain disabled.
+
+The student's name identifies the profile. Keep `Preferred display name` in the first section, before the `Request` question, so it is collected for profile removals as well as additions and updates. The former `Which profile is this request for?` question has been removed from the form. Historical answers in its response-sheet column are still supported; preserve that column and existing responses.
 
 ## Install the review feed
 
