@@ -1,7 +1,7 @@
 import { copyFile, mkdir } from "node:fs/promises";
 
 const outputDirectory = new URL("../dist/client/", import.meta.url);
-const routes = ["about", "alumni", "people", "previous-work", "research"];
+const routes = ["about", "alumni", "people", "previous-work", "recommendation-letters", "research"];
 
 for (const route of routes) {
   const routeDirectory = new URL(`${route}/`, outputDirectory);

@@ -19,6 +19,7 @@ const routes = new Map([
   ["/people", "people.html"],
   ["/previous-work", "previous-work.html"],
   ["/research", "research.html"],
+  ["/recommendation-letters", "recommendation-letters.html"],
 ]);
 const routeDirectories = [...routes.keys()].filter((route) => route !== "/");
 

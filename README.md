@@ -18,7 +18,7 @@ npm run lint
 npm test
 ```
 
-`npm test` builds all six public pages as a static export, verifies their rendered content, and checks that internal links and assets resolve.
+`npm test` builds all seven public pages as a static export, verifies their rendered content, and checks that internal links and assets resolve.
 
 ## Publishing on GitHub Pages
 

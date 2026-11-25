@@ -2,6 +2,7 @@ import { sitePath } from "@/lib/site";
 
 const navItems = [
   { label: "Research", href: "/research/" },
+  { label: "Recommendation letters", href: "/recommendation-letters/" },
   { label: "People", href: "/people/" },
   { label: "Alumni", href: "/alumni/" },
   { label: "Previous work", href: "/previous-work/" },

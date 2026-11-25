@@ -30,6 +30,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button-primary" href={sitePath("/research/")}>Explore our research</a>
             <a className="button button-secondary" href={sitePath("/people/")}>Meet the group</a>
+            <a className="button button-secondary" href={sitePath("/recommendation-letters/")}>Request a recommendation</a>
           </div>
         </div>
 

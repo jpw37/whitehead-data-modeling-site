@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
-const publicRoutes = ["/", "/research", "/people", "/alumni", "/previous-work", "/about"];
+const publicRoutes = ["/", "/research", "/people", "/alumni", "/previous-work", "/about", "/recommendation-letters"];
 const routeFiles = new Map([
   ["/", "index.html"],
   ["/research", "research.html"],
@@ -10,6 +10,7 @@ const routeFiles = new Map([
   ["/alumni", "alumni.html"],
   ["/previous-work", "previous-work.html"],
   ["/about", "about.html"],
+  ["/recommendation-letters", "recommendation-letters.html"],
 ]);
 const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const basePath = configuredBasePath
@@ -73,6 +74,27 @@ test("all internal links and anchors resolve", async () => {
         );
       }
     }
+  }
+});
+
+test("recommendation requests are easy to find and explain the submission process", async () => {
+  const homepage = await (await render()).text();
+  const html = await (await render("/recommendation-letters")).text();
+
+  assert.match(homepage, /Request a recommendation/);
+  assert.match(html, /<h1>Requesting a letter of recommendation<\/h1>/);
+  assert.match(html, /At least two weeks before your first deadline/);
+  assert.match(html, /mailto:whitehead@mathematics\.byu\.edu/);
+  assert.match(html, /Your CV or résumé and an unofficial transcript/);
+  assert.match(html, /deadlines with time zones/);
+  assert.match(html, /After I agree/);
+  assert.match(html, /Reminders are welcome/);
+  assert.match(html, /https:\/\/adamlarios\.github\.io\/LetterChecklist\.html/);
+
+  for (const route of publicRoutes) {
+    const page = await (await render(route)).text();
+    const navigation = page.match(/<nav aria-label="Primary navigation">[\s\S]*?<\/nav>/)?.[0] ?? "";
+    assert.match(navigation, /recommendation-letters\//, route);
   }
 });
 
