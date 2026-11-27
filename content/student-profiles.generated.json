@@ -2,20 +2,24 @@
   "meta": {
     "schemaVersion": 1,
     "source": "Google Forms approved-response feed",
-    "sourceUpdatedAt": "2026-09-21T16:06:44.006Z",
+    "sourceUpdatedAt": "2026-11-25T19:57:41.336Z",
     "sourceEvents": {
       "response-b2d7c827-2598-4013-a8b9-bf12a72087af": "8fd4104c90a734834fd73a588d6da3138c99c75a6d5217ad45f4f56cbca243ef",
       "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41": "d57e26e9eee89d385169296b94c2a6a0a7ab00b9c7fd2a641ff04fd5902bcb02",
       "response-bfafadab-4de6-4699-b556-d7a66d66c91c": "ec6cfc98a2f855f463b557ee49731063ba977e0fe43990e53d0c3ea44cf870a3",
       "response-147bb223-42a3-4c91-8c18-01d41da565fa": "de08a3a1f6ea92d37db7652e70c3059a16a397d07aff2755cf7e7a088d8c414e",
-      "response-00728136-0566-4f71-846a-bb8a56ab899f": "1899d5e1a254ca81d352c56555a5d40cdc9507ee4be03b25b097c90c2cba59c8"
+      "response-00728136-0566-4f71-846a-bb8a56ab899f": "1899d5e1a254ca81d352c56555a5d40cdc9507ee4be03b25b097c90c2cba59c8",
+      "response-7c82a49c-5270-4025-a8cc-1e5a09a8f9a6": "1ddfe0a752550bcba40891ac693c271cc243c26558cd452e73f34e7313a081c9",
+      "response-94377867-ef73-4980-8c0a-90adaa785ed7": "b3e9604d851abb756eb838dc2047809b99a0e74e6fe373d19e2f1fa49bd9ec6c"
     },
     "photoVersions": {
       "thea-spigarelli": "response-b2d7c827-2598-4013-a8b9-bf12a72087af",
       "dawson-collins": "response-8082d91d-d21d-4b34-846d-aeb9cc8a4f41",
       "ashtyn-whipple": "response-bfafadab-4de6-4699-b556-d7a66d66c91c",
       "tiara-eddington": "response-147bb223-42a3-4c91-8c18-01d41da565fa",
-      "wyatt-wimmer": "response-00728136-0566-4f71-846a-bb8a56ab899f"
+      "wyatt-wimmer": "response-00728136-0566-4f71-846a-bb8a56ab899f",
+      "riley-forte": "response-7c82a49c-5270-4025-a8cc-1e5a09a8f9a6",
+      "eli-sampson": "response-94377867-ef73-4980-8c0a-90adaa785ed7"
     }
   },
   "profiles": [
@@ -133,12 +137,24 @@
       "name": "Eli Sampson",
       "role": "Graduate researcher",
       "affiliation": "Brigham Young University",
+      "bio": "Eli Sampson is a master's student in mathematics at Brigham Young University, where he also earned a B.S. in Applied and Computational Mathematics. His research focuses on the mathematical theory of generalization in machine learning, particularly double descent, kernel methods, and the generalized aliasing decomposition (GAD). He is lead author on work extending GAD from finite data matrices to arbitrary function spaces, done in collaboration with Pacific Northwest National Laboratory, and has developed extensions of the framework to generalized linear models and Bayesian uncertainty quantification. After his master's degree, Eli plans to pursue a PhD focused on the mathematical foundations of machine learning.",
       "levels": [
         "M.S."
       ],
-      "years": "2025–present",
       "active": true,
-      "verified": true
+      "verified": true,
+      "years": "1",
+      "programs": [
+        "Generalization in complex models",
+        "Interpretable models from data"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "href": "https://ejsamps.github.io/"
+        }
+      ],
+      "photo": "/images/people/eli-sampson.jpg"
     },
     {
       "slug": "dawson-collins",
@@ -176,6 +192,29 @@
         "Interpretable models from data"
       ],
       "photo": "/images/people/wyatt-wimmer.jpg"
+    },
+    {
+      "slug": "riley-forte",
+      "name": "Riley Forte",
+      "role": "Undergraduate researcher",
+      "affiliation": "Brigham Young University",
+      "bio": "Riley Forte is an Applied and Computational Mathematics student at Brigham Young University with an emphasis in Computer Science. Her research focuses on cloud physics, where she works on running simulations and processing data to support ongoing research. She is interested in applying computational and mathematical methods to better understand complex physical systems and their behavior.",
+      "levels": [
+        "Undergraduate"
+      ],
+      "active": true,
+      "verified": true,
+      "years": "1 month",
+      "programs": [
+        "Interpretable models from data"
+      ],
+      "links": [
+        {
+          "label": "Professional profile",
+          "href": "https://www.linkedin.com/in/riley-forte"
+        }
+      ],
+      "photo": "/images/people/riley-forte.jpg"
     }
   ]
 }

@@ -197,29 +197,19 @@ test("generated publication records use a validated rolling two-year window", as
 
 test("people page shows only the confirmed current roster", async () => {
   const peopleHtml = await (await render("/people")).text();
+  const generated = JSON.parse(await readFile(
+    new URL("../content/student-profiles.generated.json", import.meta.url),
+    "utf8",
+  ));
+  const currentStudents = generated.profiles.filter((profile) => profile.active && profile.verified);
+  const expectedSlugs = ["jared-whitehead", ...currentStudents.map((profile) => profile.slug)];
+  const renderedSlugs = [...peopleHtml.matchAll(/<article class="person-card(?: [^"]*)?" id="([^"]+)"/g)]
+    .map((match) => match[1]);
 
-  for (const slug of [
-    "ashley-spencer",
-    "ashtyn-whipple",
-    "thea-spigarelli",
-    "quinn-oveson",
-    "lydia-tolman",
-    "tiara-eddington",
-    "eli-sampson",
-    "dawson-collins",
-    "wyatt-wimmer",
-  ]) {
-    assert.match(peopleHtml, new RegExp(`id="${slug}"`));
+  assert.deepEqual(renderedSlugs.sort(), expectedSlugs.sort());
+  for (const level of new Set(currentStudents.flatMap((profile) => profile.levels ?? []))) {
+    assert.ok(peopleHtml.includes(level), `Missing degree level ${level}`);
   }
-
-  for (const name of ["Garrett Carver", "Ashley Avery", "Paul Smith", "Nathan Schill", "Melanie Neller"]) {
-    assert.doesNotMatch(peopleHtml, new RegExp(name));
-  }
-
-  assert.equal((peopleHtml.match(/class="person-card/g) ?? []).length, 10);
-  assert.match(peopleHtml, /Undergraduate/);
-  assert.match(peopleHtml, /M\.S\./);
-  assert.match(peopleHtml, /Ph\.D\./);
   assert.doesNotMatch(peopleHtml, /Roster review before launch/);
 });
 
